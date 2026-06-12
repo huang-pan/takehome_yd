@@ -61,7 +61,7 @@ graph TD
 
 ```mermaid
 flowchart LR
-    A([/"tech_news.csv\n500 rows"/])
+    A[/"tech_news.csv\n500 rows"/]
 
     subgraph S1 ["Stage 1 — Ingest"]
         B["ingest()\ncsv.DictReader"]
@@ -96,7 +96,7 @@ flowchart LR
         G["export()\ncsv.DictWriter\n22 columns"]
     end
 
-    Z([/"ai_articles_enriched.csv"/])
+    Z[/"ai_articles_enriched.csv"/]
 
     subgraph SEM ["Semantic Search (Part 2 & 3)"]
         SEM_P["semantic_search/pipeline.py\n• Generates embeddings\n• Computes similarities\n• Filters & Exports"]
