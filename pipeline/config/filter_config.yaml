@@ -1,0 +1,22 @@
+# filter_config.yaml
+# ---------------------------------------------------------------------------
+# AI-relevance filter configuration for the YipitData ETL pipeline.
+#
+# An article is retained when --filter is passed AND either:
+#   - its cleaned `category` appears in `ai_relevant_categories`, OR
+#   - the company's `meta_industry` appears in `ai_relevant_industries`
+#
+# Edit this file to change the filter without touching any Python code.
+# Values must match exactly (case-sensitive) the canonical forms used by
+# the pipeline:
+#   - categories: output of cleaning/categories.py  (e.g. "AI_ML")
+#   - industries:  values in company_metadata.json   (e.g. "AI/ML")
+# ---------------------------------------------------------------------------
+
+ai_relevant_categories:
+  - AI_ML
+  - Data_Analytics
+
+ai_relevant_industries:
+  - AI/ML
+  - Data Analytics
