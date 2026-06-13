@@ -34,5 +34,14 @@ Decomposed the pipeline into single-responsibility layers:
 
 ---
 
+## What I Would Improve With More Time
+
+1. **Parallel Processing**: For large scale datasets, utilize `ProcessPoolExecutor` to clean and parse rows concurrently.
+2. **Atomic Writes**: Write results to a temporary file and atomically rename it upon successful completion to prevent corrupt or partial output files on failure.
+3. **Config Validation**: Validate the configuration keys in `filter_config.yaml` against the schema enums during initialization to catch typing errors early.
+4. **CI/CD Integration**: Run the pytest suite automatically in a GitHub Actions pipeline on every commit.
+
+---
+
 ## Evolution: Integration with Semantic Search (Part 2 & 3)
 The ETL output `ai_articles_enriched.csv` serves as the ingest for the `search` module. While Part 1 uses lightweight CPU-bound string matching (`difflib`), the `search` module upgrades to neural sentence-embeddings (`all-MiniLM-L6-v2`) and integrates with DuckDB to support hybrid vector similarity and SQL queries.
