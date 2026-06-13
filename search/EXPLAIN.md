@@ -5,7 +5,7 @@
 I designed the semantic search component to be modular, efficient, and robust:
 
 1. **`search_engine.py`**: A dedicated `SemanticSearchEngine` class that decouples embedding generation (via `sentence-transformers`), storage (via `DuckDB`), and mathematical operations (via `scikit-learn`'s cosine similarity). It resolves queries dynamically: if the query matches an existing `article_id`, it retrieves the precomputed embedding; otherwise, it generates a new embedding.
-2. **`pipeline.py`**: Orchestrates loading, embedding generation, self-similarity exclusion, DuckDB indexing, filtering, column renaming, and CSV export.
+2. **`search.py`**: Orchestrates loading, embedding generation, self-similarity exclusion, DuckDB indexing, filtering, column renaming, and CSV export.
 3. **`tests/test_search.py`**: Validates the core engine features (embeddings, loading, similarity, and hybrid search) to ensure technical excellence.
 
 ---

@@ -10,7 +10,7 @@ The following diagram shows how the components in the `search` subdirectory rela
 
 ```mermaid
 graph TD
-    CLI["pipeline.py (Entry point / CLI)"]
+    CLI["search.py (Entry point / CLI)"]
     ENGINE["search_engine.py (SemanticSearchEngine)"]
     MODEL["sentence-transformers (all-MiniLM-L6-v2)"]
     DB["duckdb (In-memory OLAP Database)"]
@@ -30,7 +30,7 @@ graph TD
 
 ## 2. Pipeline ETL & Semantic Search Data Flow
 
-This diagram traces the sequence of data transformations and logic steps that occur when running `pipeline.py`:
+This diagram traces the sequence of data transformations and logic steps that occur when running `search.py`:
 
 ```mermaid
 flowchart TD

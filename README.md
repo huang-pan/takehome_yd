@@ -37,7 +37,7 @@ pip install -r requirements.txt
 python pipeline/pipeline.py
 
 # Run Semantic Search Pipeline (generates filtered_ai_articles_with_embeddings.csv)
-PYTHONPATH=. python search/pipeline.py
+python search/search.py
 ```
 
 ---

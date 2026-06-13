@@ -99,7 +99,7 @@ flowchart LR
     Z[/"ai_articles_enriched.csv"/]
 
     subgraph SEM ["Semantic Search (Part 2 & 3)"]
-        SEM_P["search/pipeline.py\n• Generates embeddings\n• Computes similarities\n• Filters & Exports"]
+        SEM_P["search/search.py\n• Generates embeddings\n• Computes similarities\n• Filters & Exports"]
         CSV_SEM[("filtered_ai_articles_with_embeddings.csv")]
     end
 
