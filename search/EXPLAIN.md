@@ -8,6 +8,8 @@ I designed the semantic search component to be modular, efficient, and robust:
 2. **`search.py`**: Orchestrates loading, embedding generation, self-similarity exclusion, DuckDB indexing, filtering, column renaming, and CSV export.
 3. **`tests/test_search.py`**: Validates the core engine features (embeddings, loading, similarity, and hybrid search) to ensure technical excellence.
 
+For a visual overview of the modules and data flow, see the [Architecture Diagrams](https://github.com/huang-pan/takehome_yd/blob/main/search/MERMAID.md).
+
 ---
 
 ## Key Design Decisions & Model Selection

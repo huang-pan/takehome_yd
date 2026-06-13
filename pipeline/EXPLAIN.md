@@ -8,6 +8,8 @@ Decomposed the pipeline into single-responsibility layers:
 4. **`config/`**: YAML filter configuration loader.
 5. **`pipeline.py`**: Thin orchestrator for CLI I/O and execution.
 
+For a visual overview of the modules and data flow, see the [Architecture Diagrams](https://github.com/huang-pan/takehome_yd/blob/main/pipeline/MERMAID.md).
+
 ---
 
 ## Key Design Decisions
