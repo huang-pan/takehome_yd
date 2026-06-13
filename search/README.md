@@ -17,7 +17,7 @@ Integrates sentence embeddings (`all-MiniLM-L6-v2`), cosine similarity, and Duck
 ## How to Run
 
 ```bash
-# Execute search pipeline (generates [filtered_ai_articles_with_embeddings.csv](https://github.com/huang-pan/takehome_yd/blob/main/search/output/filtered_ai_articles_with_embeddings.csv))
+# Execute search pipeline (generates search/output/filtered_ai_articles_with_embeddings.csv)
 python search/search.py
 
 # Run unit tests

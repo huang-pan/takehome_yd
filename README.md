@@ -33,10 +33,10 @@ pip install -r requirements.txt
 ## Running the Pipelines
 
 ```bash
-# Run Core ETL Pipeline (generates [ai_articles_enriched.csv](https://github.com/huang-pan/takehome_yd/blob/main/pipeline/data/output/ai_articles_enriched.csv))
+# Run Core ETL Pipeline (generates pipeline/data/output/ai_articles_enriched.csv)
 python pipeline/pipeline.py
 
-# Run Semantic Search Pipeline (generates [filtered_ai_articles_with_embeddings.csv](https://github.com/huang-pan/takehome_yd/blob/main/search/output/filtered_ai_articles_with_embeddings.csv))
+# Run Semantic Search Pipeline (generates search/output/filtered_ai_articles_with_embeddings.csv)
 python search/search.py
 ```
 

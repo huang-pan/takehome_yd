@@ -16,7 +16,7 @@ Stateless, schema-validated ETL pipeline that processes technology-news articles
 ## How to Run
 
 ```bash
-# Default ETL (produces [ai_articles_enriched.csv](https://github.com/huang-pan/takehome_yd/blob/main/pipeline/data/output/ai_articles_enriched.csv) with all 500 rows)
+# Default ETL (produces pipeline/data/output/ai_articles_enriched.csv with all 500 rows)
 python pipeline/pipeline.py
 
 # With AI/ML relevance filtering (reads config/filter_config.yaml)
