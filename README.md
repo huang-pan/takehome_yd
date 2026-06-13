@@ -46,5 +46,5 @@ python search/search.py
 
 Execute all 256 unit tests across both modules:
 ```bash
-PYTHONPATH=. pytest pipeline/tests search/tests -v
+pytest pipeline/tests search/tests -v
 ```
