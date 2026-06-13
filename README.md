@@ -8,11 +8,11 @@ This project contains two primary modules to process, validate, and query tech-n
 
 1. **Core ETL Pipeline ([pipeline](file:///Users/huangpan/Documents/YipitData/takehome_yd/pipeline/))**
    - Ingests raw articles, cleans noisy revenues/currencies, normalizes dates, maps categories, joins company metadata, and validates schemas using Pydantic.
-   - For details, see [pipeline/README.md](file:///Users/huangpan/Documents/YipitData/takehome_yd/pipeline/README.md).
+   - For details, see [pipeline/README.md](https://github.com/huang-pan/takehome_yd/blob/main/pipeline/README.md).
 
 2. **Semantic Search & Vector DB ([search](file:///Users/huangpan/Documents/YipitData/takehome_yd/search/))**
    - Generates 384-dimensional sentence embeddings (`all-MiniLM-L6-v2`), precomputes article similarity, loads data into DuckDB, and exposes hybrid SQL + vector queries.
-   - For details, see [search/README.md](file:///Users/huangpan/Documents/YipitData/takehome_yd/search/README.md).
+   - For details, see [search/README.md](https://github.com/huang-pan/takehome_yd/blob/main/search/README.md).
 
 ---
 

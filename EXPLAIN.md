@@ -5,8 +5,8 @@ This document outlines the architecture, design choices, and evolution of the Yi
 ---
 
 ## Component Deep Dives
-- **Core ETL decisions**: Detailed parsing heuristics and validation schemas are documented in [pipeline/EXPLAIN.md](file:///Users/huangpan/Documents/YipitData/takehome_yd/pipeline/EXPLAIN.md).
-- **Search and Vector DB decisions**: Choice of embedding model and hybrid SQL/similarity details are documented in [search/EXPLAIN.md](file:///Users/huangpan/Documents/YipitData/takehome_yd/search/EXPLAIN.md).
+- **Core ETL decisions**: Detailed parsing heuristics and validation schemas are documented in [pipeline/EXPLAIN.md](https://github.com/huang-pan/takehome_yd/blob/main/pipeline/EXPLAIN.md).
+- **Search and Vector DB decisions**: Choice of embedding model and hybrid SQL/similarity details are documented in [search/EXPLAIN.md](https://github.com/huang-pan/takehome_yd/blob/main/search/EXPLAIN.md).
 
 ---
 
