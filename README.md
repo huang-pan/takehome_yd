@@ -1,4 +1,4 @@
-# YipitData Tech News — ETL & Semantic Search Pipeline
+# YipitData Data Engineering Take-Home Assignment
 
 This project contains two primary modules to process, validate, and query tech-news articles.
 
