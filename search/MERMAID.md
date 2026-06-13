@@ -6,7 +6,7 @@ This document contains Mermaid diagrams illustrating the structure, dependencies
 
 ## 1. Module Dependency Graph
 
-The following diagram shows how the components in the `semantic_search` subdirectory relate to each other and to the external libraries and data resources:
+The following diagram shows how the components in the `search` subdirectory relate to each other and to the external libraries and data resources:
 
 ```mermaid
 graph TD
@@ -16,7 +16,7 @@ graph TD
     DB["duckdb (In-memory OLAP Database)"]
     SCIKIT["scikit-learn (cosine_similarity)"]
     CSV_IN[("pipeline/data/output/ai_articles_enriched.csv")]
-    CSV_OUT[("semantic_search/output/filtered_ai_articles_with_embeddings.csv")]
+    CSV_OUT[("search/output/filtered_ai_articles_with_embeddings.csv")]
 
     CLI -->|"Instantiates & calls"| ENGINE
     ENGINE -->|"Loads & runs"| MODEL

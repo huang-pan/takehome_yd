@@ -27,7 +27,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output",
-        default="semantic_search/output/filtered_ai_articles_with_embeddings.csv",
+        default="search/output/filtered_ai_articles_with_embeddings.csv",
         help="Path for the output CSV file with embeddings",
     )
     parser.add_argument(

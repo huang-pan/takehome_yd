@@ -2,7 +2,7 @@ import pytest
 import pandas as pd
 import numpy as np
 import json
-from semantic_search.search_engine import SemanticSearchEngine
+from search.search_engine import SemanticSearchEngine
 
 @pytest.fixture
 def sample_df():

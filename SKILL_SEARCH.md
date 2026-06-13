@@ -53,7 +53,7 @@ Query Functions:
 ## Deliverables
 
 1. Code Implementation
-- Put all code and associated markdown files into the semantic_search subdirectory
+- Put all code and associated markdown files into the search subdirectory
 - Clean, modular Python code organized in functions/classes
 - A main pipeline script that processes the data and generates the output
 - Proper error handling for edge cases

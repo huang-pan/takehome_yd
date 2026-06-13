@@ -1,6 +1,0 @@
-python-dateutil>=2.9.0
-pydantic>=2.0
-PyYAML>=6.0
-
-# Dev / testing
-pytest>=9.0
