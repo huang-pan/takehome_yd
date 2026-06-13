@@ -33,7 +33,7 @@ python pipeline/pipeline.py --help
 - `enrichment/`: Joins company metadata, determines age, size, and filters.
 - `validation/`: Enforces stage data quality boundaries via Pydantic v2 schemas.
 - `config/`: Editable relevance filter rules in `filter_config.yaml`.
-- `tests/`: 252 comprehensive unit tests covering parsing logic and validation.
+- `tests/`: 265 comprehensive unit tests covering parsing, validation, and metadata enrichment.
 
 ---
 

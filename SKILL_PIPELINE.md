@@ -52,8 +52,8 @@ iii. Consider fuzzy matching for slight variations (e.g., "Amazon Web Services" 
 
 b. Metadata Enrichment
 i. Join company metadata in `company_metadata.json` to articles by company name
-ii. Add derived fields: `company_age`: Calculate age based on `founded_year` and article `published_date`, `company_size_category`:
-iii. Categorize by employee_count (e.g., "Small" < 10K, "Medium" 10K-30K, "Large" > 30K)
+ii. Add derived fields: `company_age`: Calculate age based on `founded_year` and article `published_date`
+iii. `company_size_category`: Categorize by employee_count (e.g., "Small" < 10K, "Medium" 10K-30K, "Large" > 30K)
 iv. Include all metadata fields in the final output
 
 Industry-Based Filtering
