@@ -17,7 +17,7 @@ logger = logging.getLogger("semantic_pipeline")
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="YipitData Semantic Search Pipeline",
+        description="YipitData Hybrid Semantic Search Pipeline",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
@@ -55,7 +55,7 @@ def export_to_csv(df: pd.DataFrame, path: Path) -> None:
     logger.info("Successfully exported %d rows to '%s'", len(df_export), path)
 
 def run_pipeline(input_path: Path, output_path: Path, model_name: str) -> None:
-    logger.info("=== Starting Semantic Search Pipeline ===")
+    logger.info("=== Starting Hybrid Semantic Search Pipeline ===")
     
     # 1. Read in enriched articles
     if not input_path.exists():

@@ -44,7 +44,7 @@ python search/search.py
 
 ## Running All Tests
 
-Execute all 269 unit tests across both modules:
+Execute all 271 unit tests across both modules:
 ```bash
 pytest pipeline/tests search/tests -v
 ```

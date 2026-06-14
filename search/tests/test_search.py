@@ -85,3 +85,83 @@ def test_hybrid_search(sample_df):
     results = engine.hybrid_search("ART0002", "category = 'AI_ML'", top_k=1)
     assert len(results) == 1
     assert results[0][0] == "ART0003"  # Only ART0003 matches category AI_ML
+
+
+def test_pipeline_sql_query(sample_df):
+    engine = SemanticSearchEngine()
+    # Mock top_similar_articles column
+    sample_df["top_similar_articles"] = [["ART0002"], ["ART0003"], ["ART0001"]]
+    
+    texts = (sample_df["title"] + ". " + sample_df["summary"]).tolist()
+    embs = engine.generate_embeddings(texts)
+    engine.load_data(sample_df, embs)
+    
+    # SQL query similar to search/search.py
+    query = """
+    SELECT 
+        article_id,
+        title,
+        company_name,
+        published_date,
+        category,
+        revenue_usd,
+        summary,
+        url,
+        meta_industry AS industry,
+        meta_founded_year AS founded_year,
+        meta_headquarters AS headquarters,
+        meta_employee_count AS employee_count,
+        meta_is_public AS is_public,
+        meta_stock_ticker AS stock_ticker,
+        company_age,
+        company_size_category,
+        embedding,
+        top_similar_articles
+    FROM articles
+    WHERE 
+        (category = 'AI_ML' OR meta_industry = 'AI/ML')
+        AND pub_year BETWEEN 2022 AND 2024
+        AND revenue_usd >= 50000000
+    """
+    res_df = engine.execute_sql(query)
+    
+    # Assertions
+    # In sample_df:
+    # ART0001: category=FinTech (no), meta_industry=AI/ML (yes), pub_year=2020 (no), revenue_usd=0 (no)
+    # ART0002: category=SaaS_Software (no), meta_industry=Cloud Computing (no), pub_year=2023 (yes), revenue_usd=312M (yes)
+    # ART0003: category=AI_ML (yes), meta_industry=AI/ML (yes), pub_year=2022 (yes), revenue_usd=6649M (yes)
+    # So ONLY ART0003 matches the filters!
+    assert len(res_df) == 1
+    assert res_df.loc[0, "article_id"] == "ART0003"
+    assert res_df.loc[0, "industry"] == "AI/ML"
+    assert res_df.loc[0, "founded_year"] == 1993
+    assert res_df.loc[0, "headquarters"] == "London, UK"
+    assert res_df.loc[0, "employee_count"] == 22031
+    assert res_df.loc[0, "is_public"] == True
+    assert res_df.loc[0, "stock_ticker"] == "NVDA"
+
+
+def test_hybrid_search_readme_example(sample_df):
+    engine = SemanticSearchEngine()
+    texts = (sample_df["title"] + ". " + sample_df["summary"]).tolist()
+    embs = engine.generate_embeddings(texts)
+    engine.load_data(sample_df, embs)
+    
+    # SQL filter similar to README
+    sql_filter = "pub_year BETWEEN 2022 AND 2024 AND revenue_usd >= 50000000"
+    
+    # In sample_df:
+    # - ART0001: pub_year=2020 (no), revenue_usd=0 (no)
+    # - ART0002: pub_year=2023 (yes), revenue_usd=312M (yes)
+    # - ART0003: pub_year=2022 (yes), revenue_usd=6649M (yes)
+    # Both ART0002 and ART0003 match the SQL filter.
+    
+    # Query: "large language models"
+    # ART0002 contains "Large Language Models" in title/summary, so it should rank higher
+    results = engine.hybrid_search("large language models", sql_filter, top_k=2)
+    
+    assert len(results) == 2
+    assert results[0][0] == "ART0002"  # DataRobot (LLM) should be 1st
+    assert results[1][0] == "ART0003"  # NVIDIA (profitability) should be 2nd
+
+

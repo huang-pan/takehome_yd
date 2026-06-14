@@ -1,0 +1,7 @@
+- `[x]` Install dependencies (`pandas`, `duckdb`, `numpy`, `scikit-learn`, `sentence-transformers`, `pyarrow`)
+- `[x]` Create `semantic_search/requirements.txt`
+- `[x]` Create `semantic_search/search_engine.py` (embedding, cosine similarity, DuckDB integration, hybrid search)
+- `[x]` Create `semantic_search/pipeline.py` (pipeline execution, metadata renaming, csv export)
+- `[x]` Create unit tests in `semantic_search/tests/test_search.py`
+- `[x]` Run unit tests and manual pipeline tests
+- `[x]` Create documentation: `README.md` and `EXPLAIN.md`
