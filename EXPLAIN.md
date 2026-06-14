@@ -36,3 +36,12 @@ The pipeline transitions from standard Python ETL to advanced semantic search:
 - **PyTorch & NumPy Version Conflict**: The available platform PyTorch version is capped at `2.2.2`, which is incompatible with NumPy 2.x and causes crash errors. Additionally, newer `transformers` versions drop PyTorch if `torch < 2.4.0` is installed. We resolved this by explicitly pinning `numpy<2.0.0`, `sentence-transformers==2.7.0`, and `transformers<4.41.0`.
 - **Self-Similarity Exclusion**: When precomputing top-K most similar articles, the search logic explicitly excludes the source article ID to avoid returning itself.
 - **JSON Serialization**: Custom serialization converts DuckDB's NumPy ndarrays into standard lists (`.tolist()`) prior to JSON serialization for CSV export.
+
+---
+
+## What I Would Improve With More Time
+
+1. **Gradio app**: Deploy Gradio UI on HuggingFace Space.
+2. **Production Vector Store**: Replace DuckDB with Pinecone, Weaviate, etc. for production-ready vector storage and search.
+3. **RAG evaluation**: Create a test set of queries and hand-ground truth answers to evaluate the RAG pipeline's accuracy and relevance using metrics like ROUGE, BLEU, and F1.
+4. **Self improving data pipelines**: Create a workflow that runs periodically and uses an agent skill to flag or even fix issues in the ETL cleaning pipeline..
