@@ -19,7 +19,7 @@ Run from the project root directory:
     $ PYTHONPATH=search python search/search.py
 
     Options:
-      --input   Path to the input CSV (default: pipeline/data/output/ai_articles_enriched.csv)
+      --input   Path to the input CSV (default: ../pipeline/data/output/ai_articles_enriched.csv)
       --output  Path to the output CSV (default: search/output/filtered_ai_articles_with_embeddings.csv)
       --model   SentenceTransformer model to use (default: all-MiniLM-L6-v2)
 
@@ -59,7 +59,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--input",
-        default="pipeline/data/output/ai_articles_enriched.csv",
+        default="../pipeline/data/output/ai_articles_enriched.csv",
         help="Path to enriched articles CSV input",
     )
     parser.add_argument(
