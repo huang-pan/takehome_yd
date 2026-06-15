@@ -53,5 +53,6 @@ pytest pipeline/tests search/tests -v
 
 ## Notes
 
+- https://github.com/huang-pan/takehome_yd#
 - [Development](https://docs.google.com/document/d/1f5z9FMbg42LBD9VF6aoDYGQyXQHIJ6iyqyukBV4sT1M/edit?usp=sharing)
 - [End to End python notebook](https://github.com/huang-pan/takehome_yd/blob/main/tests/end_to_end.ipynb)
