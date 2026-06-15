@@ -189,7 +189,7 @@ def test_company_age_calculation():
     # 5. Negative age (if founding year > pub_year)
     articles_neg = [{"company_name": "Scale AI", "pub_year": 2010}]
     enriched_neg = enrich_with_metadata(articles_neg, metadata)
-    assert enriched_neg[0]["company_age"] == -6
+    assert enriched_neg[0]["company_age"] is None
 
 
 def test_company_size_category_enrichment():

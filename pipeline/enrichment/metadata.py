@@ -161,7 +161,15 @@ def enrich_with_metadata(
         pub_year = row.get("pub_year")
         founded  = meta.get("founded_year")
         if pub_year is not None and founded is not None:
-            row["company_age"] = int(pub_year) - int(founded)
+            age = int(pub_year) - int(founded)
+            if age < 0:
+                logger.warning(
+                    "Negative company age calculated for '%s': pub_year=%s, founded=%s. Setting to None.",
+                    company, pub_year, founded
+                )
+                row["company_age"] = None
+            else:
+                row["company_age"] = age
         else:
             row["company_age"] = None
 
