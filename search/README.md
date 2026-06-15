@@ -18,10 +18,10 @@ Integrates sentence embeddings (`all-MiniLM-L6-v2`), cosine similarity, and Duck
 
 ```bash
 # Execute search pipeline (generates search/output/filtered_ai_articles_with_embeddings.csv)
-python search/search.py
+python search.py
 
 # Run unit tests
-pytest search/tests -v
+pytest tests -v
 ```
 
 ---

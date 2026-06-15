@@ -1,3 +1,40 @@
+#!/usr/bin/env python3
+"""
+YipitData Hybrid Semantic Search Pipeline.
+
+This script executes the search pipeline which integrates sentence embeddings,
+cosine similarity, and DuckDB storage to perform hybrid queries and filter AI/ML articles.
+
+Steps Performed:
+1. Loads enriched articles from a CSV file.
+2. Generates sentence embeddings (default: 'all-MiniLM-L6-v2').
+3. Computes the top 3 most similar articles for each row using cosine similarity.
+4. Loads data and embeddings into an in-memory DuckDB database.
+5. Performs a SQL hybrid search to filter AI/ML articles matching criteria.
+6. Exports the filtered dataset to a CSV file.
+
+Usage:
+------
+Run from the project root directory:
+    $ PYTHONPATH=search python search/search.py
+
+    Options:
+      --input   Path to the input CSV (default: pipeline/data/output/ai_articles_enriched.csv)
+      --output  Path to the output CSV (default: search/output/filtered_ai_articles_with_embeddings.csv)
+      --model   SentenceTransformer model to use (default: all-MiniLM-L6-v2)
+
+    Example with custom paths:
+      $ PYTHONPATH=search python search/search.py \
+            --input path/to/input.csv \
+            --output path/to/output.csv \
+            --model all-MiniLM-L6-v2
+
+Run from within the 'search' directory:
+    $ cd search
+    $ python search.py --input ../pipeline/data/output/ai_articles_enriched.csv \
+                       --output output/filtered_ai_articles_with_embeddings.csv
+"""
+
 import argparse
 import json
 import logging

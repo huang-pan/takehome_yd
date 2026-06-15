@@ -21,7 +21,7 @@ This project contains two primary modules to process, validate, and query tech-n
 Ensure Python 3.10+ is installed:
 ```bash
 # 1. Create and activate virtual environment
-python3 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
 
 # 2. Install all required dependencies
@@ -34,10 +34,11 @@ pip install -r requirements.txt
 
 ```bash
 # Run Core ETL Pipeline (generates pipeline/data/output/ai_articles_enriched.csv)
-python pipeline/pipeline.py
+python pipeline/pipeline.py --input pipeline/data/input/tech_news.csv --metadata pipeline/data/input/company_metadata.json --output pipeline/data/output/ai_articles_enriched.csv
+
 
 # Run Semantic Search Pipeline (generates search/output/filtered_ai_articles_with_embeddings.csv)
-python search/search.py
+python search/search.py --input pipeline/data/output/ai_articles_enriched.csv --output search/output/filtered_ai_articles_with_embeddings.csv
 ```
 
 ---

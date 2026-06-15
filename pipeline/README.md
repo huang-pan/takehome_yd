@@ -17,13 +17,13 @@ Stateless, schema-validated ETL pipeline that processes technology-news articles
 
 ```bash
 # Default ETL (produces pipeline/data/output/ai_articles_enriched.csv with all 500 rows)
-python pipeline/pipeline.py
+python pipeline.py
 
 # With AI/ML relevance filtering (reads config/filter_config.yaml)
-python pipeline/pipeline.py --filter
+python pipeline.py --filter
 
 # Show CLI options (custom inputs/outputs, logging levels)
-python pipeline/pipeline.py --help
+python pipeline.py --help
 ```
 
 ---
@@ -41,7 +41,7 @@ python pipeline/pipeline.py --help
 
 Execute core ETL test suite:
 ```bash
-pytest pipeline/tests -v
+pytest tests -v
 ```
 
 ---
