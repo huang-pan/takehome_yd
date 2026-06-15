@@ -1,8 +1,23 @@
+import sys
+from pathlib import Path
+
+# Ensure the search directory and project root are in the Python path
+search_dir = Path(__file__).resolve().parent.parent
+project_root = search_dir.parent
+for path in [str(search_dir), str(project_root)]:
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
 import pytest
 import pandas as pd
 import numpy as np
 import json
-from search.search_engine import SemanticSearchEngine
+try:
+    from search.search_engine import SemanticSearchEngine
+except ModuleNotFoundError:
+    from search_engine import SemanticSearchEngine
+
+
 
 @pytest.fixture
 def sample_df():
