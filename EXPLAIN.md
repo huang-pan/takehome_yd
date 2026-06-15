@@ -43,5 +43,5 @@ The pipeline transitions from standard Python ETL to advanced semantic search:
 
 1. **Gradio app**: Deploy Gradio UI on HuggingFace Space.
 2. **Production Vector Store**: Replace DuckDB with Pinecone, Weaviate, etc. for production-ready vector storage and search.
-3. **RAG evaluation**: Create a test set of queries and hand-ground truth answers to evaluate the RAG pipeline's accuracy and relevance using metrics like ROUGE, BLEU, and F1.
+3. **RAG evaluation**: Create a test set of queries and hand-ground truth answers to evaluate the RAG pipeline's accuracy and relevance using metrics like F1.
 4. **Self improving data pipelines**: Create a workflow that runs periodically and uses an agent skill to flag or even fix issues in the ETL cleaning pipeline..
