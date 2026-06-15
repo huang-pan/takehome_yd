@@ -5,7 +5,7 @@ Integrates sentence embeddings (`all-MiniLM-L6-v2`), cosine similarity, and Duck
 ---
 
 ## Installation & Requirements
-- Python 3.10+
+- Python 3.11
 - Install dependencies:
   ```bash
   pip install -r requirements.txt

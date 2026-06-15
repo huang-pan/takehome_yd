@@ -5,7 +5,7 @@ Stateless, schema-validated ETL pipeline that processes technology-news articles
 ---
 
 ## System Requirements & Installation
-- Python 3.10+
+- Python 3.11
 - Install dependencies:
   ```bash
   pip install -r requirements.txt
