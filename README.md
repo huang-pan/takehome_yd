@@ -18,7 +18,7 @@ This project contains two primary modules to process, validate, and query tech-n
 
 ## Installation & Setup
 
-Ensure Python 3.10+ is installed:
+Ensure Python 3.11 is installed:
 ```bash
 # 1. Create and activate virtual environment
 python -m venv .venv
