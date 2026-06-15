@@ -78,15 +78,15 @@ def run_pipeline(input_path: Path, output_path: Path, model_name: str) -> None:
     embeddings = engine.generate_embeddings(texts)
     logger.info("Generated embeddings with shape %s.", embeddings.shape)
     
-    # 3. Vector Similarity Search (Top 3 for each article)
+    # 3. Vector Similarity Search (Top 3 for each article) -> top_similar_articles column
     logger.info("Calculating top 3 most similar articles for each row...")
     similarity_matrix = np.dot(embeddings, embeddings.T)
     # Since embeddings are normalized by SentenceTransformer, dot product is cosine similarity
     
-    norms = np.linalg.norm(embeddings, axis=1)
+    norms = np.linalg.norm(embeddings, axis=1) # Lengths of all vectors
     # If not unit-normalized, division is required, but MiniLM embeddings are unit-normalized.
     # Just to be mathematically robust, we normalize similarity:
-    norms_matrix = np.outer(norms, norms)
+    norms_matrix = np.outer(norms, norms) # Matrix of ||u_i|| * ||u_j||
     similarity_matrix = similarity_matrix / np.maximum(norms_matrix, 1e-12)
     
     top_similar_list = []
